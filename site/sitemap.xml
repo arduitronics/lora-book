@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://arduitronics.github.io/ESP-kit1/</loc>
+         <lastmod>2022-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arduitronics.github.io/ESP-kit1/about/</loc>
+         <lastmod>2022-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arduitronics.github.io/ESP-kit1/barebone/</loc>
+         <lastmod>2022-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arduitronics.github.io/ESP-kit1/content/</loc>
+         <lastmod>2022-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arduitronics.github.io/ESP-kit1/gk00001/</loc>
+         <lastmod>2022-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arduitronics.github.io/ESP-kit1/license/</loc>
+         <lastmod>2022-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
