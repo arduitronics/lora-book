@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://arduitronics.github.io/ESP-kit1/</loc>
+         <loc>https://arduitronics.github.io/lora-book/</loc>
          <lastmod>2022-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://arduitronics.github.io/ESP-kit1/about/</loc>
+         <loc>https://arduitronics.github.io/lora-book/about/</loc>
          <lastmod>2022-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://arduitronics.github.io/ESP-kit1/barebone/</loc>
+         <loc>https://arduitronics.github.io/lora-book/barebone/</loc>
          <lastmod>2022-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://arduitronics.github.io/ESP-kit1/content/</loc>
+         <loc>https://arduitronics.github.io/lora-book/chapter1/</loc>
          <lastmod>2022-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://arduitronics.github.io/ESP-kit1/gk00001/</loc>
+         <loc>https://arduitronics.github.io/lora-book/chapter2/</loc>
          <lastmod>2022-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://arduitronics.github.io/ESP-kit1/license/</loc>
+         <loc>https://arduitronics.github.io/lora-book/license/</loc>
          <lastmod>2022-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>

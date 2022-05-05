@@ -2,9 +2,9 @@ site_name: Lora Book
 site_url: https://arduitronics.github.io/lora-book/
 nav:
     - Home: index.md
-    - Content: content.md
-    - GK00001: gk00001.md
-    - Barebone ESP8266: barebone.md
+    - Chapter1: chapter1.md
+    - Chapter2: chapter2.md
+    - Chapter3: chapter3.md
     - License: license.md
     - About: about.md
 theme:
