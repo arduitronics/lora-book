@@ -1,0 +1,2517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://arduitronics.github.io/lora-book/chapterX/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>ChapterX - Lora Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#grove-beginner-kit-for-arduino" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Lora Book" class="md-header__button md-logo" aria-label="Lora Book" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lora Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ChapterX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lora Book" class="md-nav__button md-logo" aria-label="Lora Book" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lora Book
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter1/" class="md-nav__link">
+        Chapter1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/" class="md-nav__link">
+        Chapter2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ChapterX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ChapterX
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-overview" class="md-nav__link">
+    Hardware Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breakout-instruction" class="md-nav__link">
+    Breakout Instruction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-list" class="md-nav__link">
+    Part List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    Learning Objectives
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plug-and-play-unboxing-demo" class="md-nav__link">
+    Plug and Play Unboxing Demo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-started-with-arduino" class="md-nav__link">
+    How to Get Started With Arduino
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Get Started With Arduino">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-the-arduino-ide" class="md-nav__link">
+    Install the Arduino IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-usb-driver" class="md-nav__link">
+    Install the USB driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-arduino-ide" class="md-nav__link">
+    Start the Arduino IDE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-guide" class="md-nav__link">
+    Lesson Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lesson-1-blinking-with-the-led" class="md-nav__link">
+    Lesson 1: Blinking with the LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-2-pressing-button-to-light-up-led" class="md-nav__link">
+    Lesson 2: Pressing Button to Light Up LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-3-controlling-the-frequency-of-the-blink" class="md-nav__link">
+    Lesson 3: Controlling the Frequency of the Blink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-4-making-the-buzzer-go-beep" class="md-nav__link">
+    Lesson 4: Making the Buzzer go BEEP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-5-making-an-light-induct-led" class="md-nav__link">
+    Lesson 5:  Making an Light Induct LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-6-sound-sensitive-led-light" class="md-nav__link">
+    Lesson 6: Sound Sensitive LED Light
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-7-displaying-data-on-oled" class="md-nav__link">
+    Lesson 7: Displaying Data on OLED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-8-detecting-surrounding-temperature-humidity" class="md-nav__link">
+    Lesson 8: Detecting Surrounding Temperature &amp; Humidity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-9-measuring-surrounding-air-pressure" class="md-nav__link">
+    Lesson 9: Measuring Surrounding Air Pressure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-10-sensing-movement" class="md-nav__link">
+    Lesson 10: Sensing Movement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-projects" class="md-nav__link">
+    Bonus Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Bonus Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-1-music-dynamic-rhythm-lamp" class="md-nav__link">
+    Project 1:  Music dynamic rhythm lamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-2-make-an-intelligent-sound-light-induction-desk-lamp" class="md-nav__link">
+    Project 2: Make an intelligent sound-light induction desk lamp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-your-own-modules-boards" class="md-nav__link">
+    Make Your Own Modules &amp; Boards
+  </a>
+  
+    <nav class="md-nav" aria-label="Make Your Own Modules &amp; Boards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eda" class="md-nav__link">
+    EDA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb-services" class="md-nav__link">
+    PCB Services
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schematic-online-viewer" class="md-nav__link">
+    Schematic Online Viewer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-learning" class="md-nav__link">
+    More Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-support" class="md-nav__link">
+    Tech Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-overview" class="md-nav__link">
+    Hardware Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breakout-instruction" class="md-nav__link">
+    Breakout Instruction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-list" class="md-nav__link">
+    Part List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    Learning Objectives
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plug-and-play-unboxing-demo" class="md-nav__link">
+    Plug and Play Unboxing Demo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-started-with-arduino" class="md-nav__link">
+    How to Get Started With Arduino
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Get Started With Arduino">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-the-arduino-ide" class="md-nav__link">
+    Install the Arduino IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-usb-driver" class="md-nav__link">
+    Install the USB driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-arduino-ide" class="md-nav__link">
+    Start the Arduino IDE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-guide" class="md-nav__link">
+    Lesson Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lesson-1-blinking-with-the-led" class="md-nav__link">
+    Lesson 1: Blinking with the LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-2-pressing-button-to-light-up-led" class="md-nav__link">
+    Lesson 2: Pressing Button to Light Up LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-3-controlling-the-frequency-of-the-blink" class="md-nav__link">
+    Lesson 3: Controlling the Frequency of the Blink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-4-making-the-buzzer-go-beep" class="md-nav__link">
+    Lesson 4: Making the Buzzer go BEEP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-5-making-an-light-induct-led" class="md-nav__link">
+    Lesson 5:  Making an Light Induct LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-6-sound-sensitive-led-light" class="md-nav__link">
+    Lesson 6: Sound Sensitive LED Light
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-7-displaying-data-on-oled" class="md-nav__link">
+    Lesson 7: Displaying Data on OLED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-8-detecting-surrounding-temperature-humidity" class="md-nav__link">
+    Lesson 8: Detecting Surrounding Temperature &amp; Humidity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-9-measuring-surrounding-air-pressure" class="md-nav__link">
+    Lesson 9: Measuring Surrounding Air Pressure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-10-sensing-movement" class="md-nav__link">
+    Lesson 10: Sensing Movement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-projects" class="md-nav__link">
+    Bonus Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Bonus Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-1-music-dynamic-rhythm-lamp" class="md-nav__link">
+    Project 1:  Music dynamic rhythm lamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-2-make-an-intelligent-sound-light-induction-desk-lamp" class="md-nav__link">
+    Project 2: Make an intelligent sound-light induction desk lamp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-your-own-modules-boards" class="md-nav__link">
+    Make Your Own Modules &amp; Boards
+  </a>
+  
+    <nav class="md-nav" aria-label="Make Your Own Modules &amp; Boards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eda" class="md-nav__link">
+    EDA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb-services" class="md-nav__link">
+    PCB Services
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schematic-online-viewer" class="md-nav__link">
+    Schematic Online Viewer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-learning" class="md-nav__link">
+    More Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-support" class="md-nav__link">
+    Tech Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="grove-beginner-kit-for-arduino">Grove Beginner Kit For Arduino</h1>
+<p>Grove Beginner Kit for Arduino is one of the best Arduino Beginner Kit for beginners. It includes one Arduino compatible Board and 10 additional Arduino sensors and all in one-piece of PCB design. <strong>All the modules have been connected to the Seeeduino through the PCB stamp holes so no Grove cables are needed to connect</strong>. Of course, you can also take the modules out and use Grove cables to connect the modules. You can build any Arduino project you like with this Grove Beginner Kit For Arduino.</p>
+<p><a href="https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-4549.html"><img alt="" src="https://files.seeedstudio.com/wiki/Seeed-WiKi/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<h2 id="hardware-overview">Hardware Overview</h2>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Parts.jpg" /></p>
+<p><strong>Note:</strong> Dimensions - 17.69 * 11.64 * 1.88cm</p>
+<ol>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-Red_LED/">Grove - LED</a>:</strong> Simple LED module</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-Buzzer/">Grove - Buzzer</a>:</strong> Piezo Buzzer</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-OLED-Display-0.96-SSD1315/">Grove - OLED Display 0.96"</a>:</strong> 128×64 dot resolution High brightness,self-emission and high contrast ratio Big screen on a compact design Low power consumption.</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-Button/">Grove - Button</a>:</strong> Momentary Push Button</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/">Grove - Rotary Potentiometer</a>:</strong> Adjustable Potentiometer</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-Light_Sensor/">Grove - Light</a>:</strong> Detects surrounding light intensity</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-Sound_Sensor/">Grove - Sound</a>:</strong> Detects surrounding sound intensity</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/">Grove - Temperature &amp; Humidity Sensor</a>:</strong> Detects surrounding temperature and humidity values</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/">Grove - Air Pressure Sensor</a>:</strong> Detects surrounding atmospheric pressure</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Accelerator</a>:</strong> Detects object acceleration</li>
+<li><strong><a href="https://wiki.seeedstudio.com/Seeeduino_Lotus/">Seeeduino Lotus</a>:</strong> Arduino Compatible Board with Grove Ports</li>
+</ol>
+<p><strong>Note:</strong>
+        By default, Grove modules are connected to Seeeduino via PCB stamp holes. This means you don't need to use Grove cables to connect if not broken out. The default pins are as follow:</p>
+<table>
+<thead>
+<tr>
+<th>Modules</th>
+<th>Interface</th>
+<th>Pins/Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LED</td>
+<td>Digital</td>
+<td>D4</td>
+</tr>
+<tr>
+<td>Buzzer</td>
+<td>Digital</td>
+<td>D5</td>
+</tr>
+<tr>
+<td>OLED Display 0.96"</td>
+<td>I2C</td>
+<td>I2C, 0x78(default)</td>
+</tr>
+<tr>
+<td>Button</td>
+<td>Digital</td>
+<td>D6</td>
+</tr>
+<tr>
+<td>Rotary Potentiometer</td>
+<td>Analog</td>
+<td>A0</td>
+</tr>
+<tr>
+<td>Light</td>
+<td>Analog</td>
+<td>A6</td>
+</tr>
+<tr>
+<td>Sound</td>
+<td>Analog</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>Temperature &amp; Humidity Sensor</td>
+<td>Digital</td>
+<td>D3</td>
+</tr>
+<tr>
+<td>Air Pressure Sensor</td>
+<td>I2C</td>
+<td>I2C, 0x77(default) / 0x76(optional)</td>
+</tr>
+<tr>
+<td>3-Axis Accelerator</td>
+<td>I2C</td>
+<td>I2C, 0x19(default)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="breakout-instruction">Breakout Instruction</h3>
+<p><strong>Attention:</strong>
+    Please be careful not to cut your hands when using a knife</p>
+<p>If you prefer to use the modules in elsewhere then you can simply follow the procedures to break the modules  out!</p>
+<p><strong>Step 1</strong></p>
+<p>Use a knife or a sharp object to cut at the stamp holes that connect the sensors together</p>
+<p><strong>Step 2</strong></p>
+<p>Shake the modules up and down and it should come out quite easily!</p>
+<h2 id="part-list">Part List</h2>
+<table>
+<thead>
+<tr>
+<th>Modules</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensors</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Temperature &amp; Humidity Sensors</td>
+<td>x1</td>
+</tr>
+<tr>
+<td>3-Axis Accelerometers</td>
+<td>x1</td>
+</tr>
+<tr>
+<td>Air Pressure</td>
+<td>x1</td>
+</tr>
+<tr>
+<td>Light Sensor</td>
+<td>x1</td>
+</tr>
+<tr>
+<td>Sound Sensor</td>
+<td>x1</td>
+</tr>
+<tr>
+<td><strong>Input Modules</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Rotary Potentiometer</td>
+<td>x1</td>
+</tr>
+<tr>
+<td>Button</td>
+<td>x1</td>
+</tr>
+<tr>
+<td><strong>Output Modules</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>LED</td>
+<td>x1</td>
+</tr>
+<tr>
+<td>Buzzer</td>
+<td>x1</td>
+</tr>
+<tr>
+<td><strong>Display Module</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>OLED Display</td>
+<td>x1</td>
+</tr>
+<tr>
+<td><strong>Grove Cables</strong></td>
+<td>x6</td>
+</tr>
+<tr>
+<td><strong>Micro USB Cable</strong></td>
+<td>x1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Basics of Open Source Hardware Systems.</li>
+<li>Basic Arduino Programming.</li>
+<li>Communication principles and methods for sensors.</li>
+<li>Hands-on implementation of Open Source Hardware projects.</li>
+</ul>
+<h3 id="plug-and-play-unboxing-demo">Plug and Play Unboxing Demo</h3>
+<p>The Grove Beginner Kit has a plug and plays unboxing demo, where you first plug in the power to the board, you get the chance to experience all the sensors in one go! Use the button and rotary potentiometer to experience each sensor demo!</p>
+<p><img alt="" src="https://s3-us-west-2.amazonaws.com/files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Firmware.jpg" /></p>
+<ul>
+<li><strong>Scroll</strong> -&gt; Rotating Rotary Potentiometer</li>
+<li><strong>Select</strong> -&gt; Short Press Button</li>
+<li><strong>Exit Current Demo</strong> -&gt; Long Press Button</li>
+</ul>
+<p>Buzzer and LED module are used for key prompt.</p>
+<h2 id="how-to-get-started-with-arduino">How to Get Started With Arduino</h2>
+<h3 id="install-the-arduino-ide">Install the Arduino IDE</h3>
+<ul>
+<li><strong>Arduino IDE</strong> is an integrated development environment for Arduino, which is used for single-chip microcomputer software programming, downloading, testing and so on.</li>
+<li>Download and Install <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a> for your desired operating system here.</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Seeeduino_Stalker_V3_1/images/Download_IDE.png" /></p>
+<h3 id="install-the-usb-driver">Install the USB driver</h3>
+<ul>
+<li>
+<p>Arduino connects to the PC via a USB cable. The USB driver depends on the type of USB chip you're using on your Arduino. <em>Note: USB chips are usually printed on the back of the development board.</em></p>
+</li>
+<li>
+<p>Download the <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">CP2102 USB Driver</a>. <strong>Note:</strong> Download according to your OS.</p>
+</li>
+<li>After the driver installation is completed, connect Arduino to the USB port of PC with a USB cable.<ul>
+<li><strong>For Windows users:</strong> You can see it in <code>My Computer</code> -&gt; <code>Properties</code> -&gt; <code>Hardware</code> -&gt; <code>Device Management</code>. A <code>COM</code> will appear.</li>
+<li><strong>For Mac OS users:</strong> You can navigate to <code></code> on the top left corner, and choose <code>About this Mac</code> -&gt; <code>System Report...</code> -&gt; <code>USB</code>. A CP2102 USB Driver should appear.</li>
+</ul>
+</li>
+<li>If the driver is not installed, or if the driver is installed incorrectly (not matching the chip model), it will appear as an "unknown device" in the device manager. At this point, the driver should be reinstalled.</li>
+</ul>
+<h3 id="start-the-arduino-ide">Start the Arduino IDE</h3>
+<p>1.Open the <strong>Arduino IDE</strong> on your PC.
+2.Click on <code>Tools</code> -&gt; <code>Board</code> to select the correct Development Board Model. Select <strong>Arduino/Genuino Uno</strong> as Board.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/board.png" /></p>
+<p>3.Click <code>Tools</code> -&gt; <code>Port</code> to select the correct Port (the Serial Port showed in Device Manager in the previous step). In this case, <code>COM6</code> is selected. <strong>For Mac OS users</strong>, it should be <code>/dev/cu.SLAB_USBtoUART</code>.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/port.png" /></p>
+<p>4.Create a new Arduino file and name it <code>Hello.ino</code>, then copy the following code into it:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span><span class="c1">// initializes the serial port with a baud rate of 9600</span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;hello, world&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints a string to a serial port</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">//delay of 1 second</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>5.In the upper left corner of the Arduino IDE, there are two buttons, <strong>Verify and Upload</strong>. First, press the Verify button(✓) to compile. After the compilation is successful, press the upload button(→).</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/func.png" /></p>
+<p>6.Navigate to <code>Tools</code> -&gt; <code>Serial Monitor</code>, or click the <strong>Serial Monitor</strong> in the upper right corner(Magnifier Symbol), you can see the program running results:</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/print.png" /></p>
+<p><strong>Note:</strong> If you installed the portable Arduino IDE from our USB Drive, you can find all the module demos in the <strong>Files</strong> -&gt; <strong>Sketch Book</strong>, as well as all the module libraries, are pre-installed with Arduino IDE!</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sketchbook.png" /></p>
+<p><strong>Note:</strong>
+        All modules are pre-wired on a single circuit board, so no cables and soldering are needed. However, if you break out the modules and want to connect them with Grove  cables, please kindly check the Breakout Guide.</p>
+<h2 id="lesson-guide">Lesson Guide</h2>
+<h3 id="lesson-1-blinking-with-the-led">Lesson 1: Blinking with the LED</h3>
+<p>We have completed the output "Hello world" program. Now let's learn how to light the LED module. We know the three basic components of a control system: Input, Control, and Output. But lighting up LED uses only the output, not the input. Seeeduino is the control unit, the LED module is the output unit and the output signal is a digital signal.</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is Digital Signal</strong></li>
+</ul>
+<p><strong>Digital signal:</strong> Digital signal refers to the value of the amplitude is discrete, the amplitude is limited to a finite number of values. In our controller, the digital signal has two states: LOW(0V) for 0; HIGH(5V) for 1. So sending a HIGH signal to LED can light it up.</p>
+<p><img alt="Alt text" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/digital.png" /></p>
+<ul>
+<li><font size=5;font color=#314B9F >Components Involved</font><ol>
+<li>Seeeduino Lotus</li>
+<li>Grove LED</li>
+<li>Grove Cable(If Broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/LED.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>Connect the Seeeduino to the computer through the USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//LED Blink</span>
+<span class="c1">//The LED will turn on for one second and then turn off for one second</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The <code>setup()</code> function is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc. The <code>setup()</code> function will only run once, after each powerup or reset of the Arduino board.</p>
+<div class="highlight"><pre><span></span><code><span class="n">loop</span><span class="p">(){</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>After creating a <code>setup()</code> function, which initializes and sets the initial values, the <code>loop()</code> function does precisely what its name suggests, and loops consecutively, allowing your program to change and respond. Use it to actively control the Arduino board.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Converts a value to the int data type.</p>
+<p><strong>Syntax:</strong></p>
+<p>int(<strong>x</strong>) or (int)<strong>x</strong> (C-style type conversion)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>x</strong>: a value. Allowed data types: any type.</p>
+<p>Assigned an <code>int</code> type 4 to variable named ledPin.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Configures the specified pin to behave either as an input or an output. See the Digital Pins page for details on the functionality of the pins.</p>
+<p>As of Arduino 1.0.1, it is possible to enable the internal pull-up resistors with the mode <code>INPUT_PULLUP</code>. Additionally, the <code>INPUT</code> mode explicitly disables the internal pullups.</p>
+<p><strong>Syntax:</strong></p>
+<p>pinMode(<strong>pin, mode</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>pin</strong>: the Arduino pin number to set the mode of.</p>
+<p><strong>mode</strong>: <code>INPUT</code>, <code>OUTPUT</code>, or <code>INPUT_PULLUP</code>.</p>
+<p>Setting ledPin to the output mode.</p>
+<div class="highlight"><pre><span></span><code><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Write a <code>HIGH</code> or a <code>LOW</code> value to a digital pin.</p>
+<p>If the pin has been configured as an OUTPUT with pinMode(), its voltage will be set to the corresponding value: 5V (or 3.3V on 3.3V boards) for <code>HIGH</code>, 0V (ground) for <code>LOW</code>.</p>
+<p>If the pin is configured as an INPUT, digitalWrite() will enable (HIGH) or disable (LOW) the internal pullup on the input pin. It is recommended to set the pinMode() to <code>INPUT_PULLUP</code> to enable the internal pull-up resistor. See the Digital Pins tutorial for more information.</p>
+<p>If you do not set the pinMode() to OUTPUT, and connect an LED to a pin, when calling digitalWrite(HIGH), the LED may appear dim. Without explicitly setting pinMode(), digitalWrite() will have enabled the internal pull-up resistor, which acts as a large current-limiting resistor.</p>
+<p><strong>Syntax:</strong></p>
+<p>digitalWrite(<strong>pin, value</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>pin</strong>: the Arduino pin number.</p>
+<p><strong>value</strong>: <code>HIGH</code> or <code>LOW</code>.</p>
+<p>When we set the ledPin as output, HIGH means sending high level to the pin, LED turns on.</p>
+<div class="highlight"><pre><span></span><code><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>When we set the led as output, low stands for sending low level to the pin, LED turns off.</p>
+<div class="highlight"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Pauses the program for the amount of time (in milliseconds) specified as a parameter. (There are 1000 milliseconds in a second.)</p>
+<p><strong>Syntax:</strong></p>
+<p>delay(<strong>ms</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>ms</strong>: the number of milliseconds to pause. Allowed data types: unsigned long.</p>
+<p>Delay the program by 1000ms(1s).</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>The LED module will be 1 second on and 1 second off.</p>
+<p><strong>LED Brightness Adjustment:</strong></p>
+<div align=center><img src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/LED-res.jpeg"/></div>
+<p></br></p>
+<p>On the Grove LED module, there is a <strong>variable resistor that can be adjusted using a screw driver.</strong> Twist it to make the LED light up brighter!</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>If modules are broken out from the board. Use a Grove cable to connect the <strong>Grove LED</strong> to Seeeduino Lotus's digital interface <strong>D4</strong>.  </p>
+<h3 id="lesson-2-pressing-button-to-light-up-led">Lesson 2: Pressing Button to Light Up LED</h3>
+<p>The first thing we need to know is that the input of the button is a digital signal, and there are only two states, 0 or 1, so we can control the output based on those two states.</p>
+<ul>
+<li>
+<p><strong>Practice:</strong> Use button to turn ON and OFF the LED module</p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Components Involved</font></p>
+<ol>
+<li>Seeeduino Lotus</li>
+<li>Grove LED</li>
+<li>Grove Button</li>
+<li>Grove Cables(If broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Button.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hardware analysis</strong>:</p>
+<ul>
+<li>Input: Button</li>
+<li>Control: Seeeduino</li>
+<li>Output: LED module</li>
+</ul>
+</li>
+</ul>
+<p>Both the sensor and the LED use digital signals, so they should be connected to digital interfaces.</p>
+<ul>
+<li><strong>Software code</strong>:<ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Button to turn ON/OFF LED</span>
+<span class="c1">//Constants won&#39;t change. They&#39;re used here to set pin numbers:</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buttonPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w">     </span><span class="c1">// the number of the pushbutton pin</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">4</span><span class="p">;</span><span class="w">      </span><span class="c1">// the number of the LED pin</span>
+
+<span class="c1">// variables will change:</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">buttonState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">         </span><span class="c1">// variable for reading the pushbutton status</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// initialize the LED pin as an output:</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// initialize the pushbutton pin as an input:</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// read the state of the pushbutton value:</span>
+<span class="w">  </span><span class="n">buttonState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// check if the pushbutton is pressed. If it is, the buttonState is HIGH:</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">buttonState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// turn LED on:</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// turn LED off:</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Define LED as the output unit.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Define button as the input unit.</p>
+<div class="highlight"><pre><span></span><code><span class="n">buttonState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Reads the value from a specified digital pin, either <code>HIGH</code> or <code>LOW</code>.</p>
+<p><strong>Syntax:</strong></p>
+<p>digitalRead(<strong>pin</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>pin</strong>: the Arduino <code>pin</code> number you want to read</p>
+<p>This function is used to read the states of digital pins, either HIGH or LOW. When the button is pressed, the state is HIGH, otherwise is LOW.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">buttonState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>The if…​else allows greater control over the flow of code than the basic if statement, by allowing multiple tests to be grouped. An else clause (if at all exists) will be executed if the condition in the if statement results in false. The else can proceed another if test, so that multiple, mutually exclusive tests can be run at the same time.</p>
+<p>Each test will proceed to the next one until a true test is encountered. When a true test is found, its associated block of code is run, and the program then skips to the line following the entire if/else construction. If no test proves to be true, the default else block is executed, if one is present, and sets the default behaviour.</p>
+<p>Note that an else if block may be used with or without a terminating else block and vice versa. An unlimited number of such else if branches are allowed.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// do Thing A</span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// do Thing B</span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// do Thing C</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The usage of the statement is: if the logical expression in parentheses is true, execute the statement in curly braces after <strong>if</strong>, if not, execute the statement in curly braces after the <strong>else</strong>. If the state of the button is high, the LED pin outputs a high level and turn the LED on, else turn LED off.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>Pressing the button will turn the LED module on.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use a Grove cable to connect the Grove LED to Seeeduino Lotus's digital interface <strong>D4</strong>. Connect the Grove Button to digital interface <strong>D6</strong>.</p>
+<h3 id="lesson-3-controlling-the-frequency-of-the-blink">Lesson 3: Controlling the Frequency of the Blink</h3>
+<p>In the last section, we studied that button only has two states, ON/OFF state corresponding 0V and 5V, but in practice, we often counter the need for many states, not just 0V and 5V. Then you need to use Analog Signal! Rotary Potentiometer is a classic example that uses an analog signal.</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is Analog Signal</strong></li>
+</ul>
+<p><strong>Analog signals:</strong> Signals vary continuously in time and value, and the amplitude, frequency, or phase of the signal changes continuously at any time, such as the current broadcast sound signal, or image signal, etc. The analog signal has sine wave and triangle wave and so on. The analog pins of your microcontroller can have between 0V and 5V is mapped to a range between 0 and 1023 where 1023 is mapped as 5V and 512 is mapped as 2.5v and etc.</p>
+<p><img alt="Alt text" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/analog.png" /></p>
+<ul>
+<li><font size=5;font color=#314B9F >Components Involved</font><ol>
+<li>Seeeduino Lotus</li>
+<li>Grove LED</li>
+<li>Grove Rotary Switch</li>
+<li>Grove Cables(If broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/rotary.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hardware analysis:</strong></p>
+<ul>
+<li>Input: Rotary Potentiometer</li>
+<li>Control: Seeeduino Lotus</li>
+<li>Output: LED module</li>
+</ul>
+</li>
+</ul>
+<p>The input is an analog signal, so it is connected to the analog signal interface, the LED module is connected to the digital signal interface.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Software Code</font><ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Rotary controls LED</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">rotaryPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w">    </span><span class="c1">// select the input pin for the rotary</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">      </span><span class="c1">// select the pin for the LED</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">rotaryValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// variable to store the value coming from the rotary</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// declare the ledPin as an OUTPUT:</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// read the value from the sensor:</span>
+<span class="w">  </span><span class="n">rotaryValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// turn the ledPin on</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// stop the program for &lt;sensorValue&gt; milliseconds:</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// turn the ledPin off:</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// stop the program for for &lt;sensorValue&gt; milliseconds:</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">rotaryPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w">    </span><span class="c1">// select the input pin for the rotary</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">      </span><span class="c1">// select the pin for the LED</span>
+</code></pre></div>
+<strong>Description:</strong></p>
+<p>You may find that we define rotatePin and ledPin in different ways. This is because Rotary Potentiometer generates an analog signal, and the LED is controlled by a digital signal.</p>
+<p>To <strong>define for Analog Pin</strong>, use A + the number of the Pin (For Example here <code>A0</code>).</p>
+<p>To <strong>define for Digital Pin</strong>, use just the number of the pin (For Example here <code>4</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="n">rotaryValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the operating voltage(5V or 3.3V) into integer values between 0 and 1023. On an Arduino UNO, for example, this yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit.</p>
+<p><strong>Syntax:</strong></p>
+<p>analogRead(<strong>pin</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>pin</strong>: the name of the analog input pin to read from (A0 to A5 on most boards).</p>
+<p><strong>Returns:</strong> The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: int.</p>
+<p>This function is used to read the value of Analog pins(the rotary sensor position), the range of values is: 0 ~ 1023.</p>
+<div class="highlight"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Delay function, The millisecond duration of the delay is the value in parentheses. Because the value is the value of the analog signal of the knob pin being read, so the delay time can be controlled by the knob.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>Turning the Potentiometer will change the frequency of LED flickering.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use a Grove cable to connect LED to Seeeduino Lotus's digital interface <strong>D4</strong>, and a Grove cable to connect the Grove Rotary Switch to analog signal interface <strong>A0</strong>.</p>
+<h3 id="lesson-4-making-the-buzzer-go-beep">Lesson 4: Making the Buzzer go BEEP</h3>
+<p>Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep sound. This can be used for many situations for indication purposes.  We studied the use of potentiometer in the last section, so how do we use the potentiometer to control the volume of the buzzer? This requires the used of PWM control!</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is PWM</strong></li>
+</ul>
+<p><strong>Pulse Width Modulation, or PWM</strong>, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED. <em>Reference: <a href="https://www.arduino.cc/en/tutorial/PWM">Arduino</a></em></p>
+<p>As the diagram indicates below, use <code>analogWrite()</code> to generate PWM waves, the higher the percentage of Duty Cycle, the louder the buzzer.</p>
+<div align=center><img src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/BuzzerPWM.jpg"/></div>
+
+<p>There are six digital pins on your Seeeduino that are marked with the symbol “~”, which means they can send out a PWM signal : 3,5,6,9,10,11. They are celled PWM pins.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Components Involved</font><ol>
+<li>Seeeduino Lotus</li>
+<li>Grove Buzzer</li>
+<li>Grove Cable(If Broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Buzzer.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>Connect the Seeeduino to the computer through the USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">BuzzerPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">Potentiometer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">Potentiometer</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">potentioValue</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">potentioValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">Potentiometer</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">potentioValue</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w"> </span><span class="c1">//Mapping potentiometer value to PWM signal value</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">potentioValue</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Re-maps a number from one range to another. That is, a value of <strong>fromLow</strong> would get mapped to <strong>toLow</strong>, a value of <strong>fromHigh</strong> to <strong>toHigh</strong>, values in-between to values in-between, etc.</p>
+<p>Does not constrain values to within the range, because out-of-range values are sometimes intended and useful. The <code>constrain()</code> function may be used either before or after this function, if limits to the ranges are desired.</p>
+<p>Note that the "lower bounds" of either range may be larger or smaller than the "upper bounds" so the <code>map()</code> function may be used to reverse a range of numbers, for example</p>
+<p><strong>y = map(x, 1, 50, 50, 1);</strong></p>
+<p>The function also handles negative numbers well, so that this example</p>
+<p><strong>y = map(x, 1, 50, 50, -100);</strong></p>
+<p>is also valid and works well.</p>
+<p>The map() function uses integer math so will not generate fractions, when the math might indicate that it should do so. Fractional remainders are truncated and are not rounded or averaged.</p>
+<p><strong>Syntax:</strong></p>
+<p>map(<strong>value, fromLow, fromHigh, toLow, toHigh</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>value</strong>: the number to map.</p>
+<p><strong>fromLow</strong>: the lower bound of the value’s current range.</p>
+<p><strong>fromHigh</strong>: the upper bound of the value’s current range.</p>
+<p><strong>toLow</strong>: the lower bound of the value’s target range.</p>
+<p><strong>toHigh</strong>: the upper bound of the value’s target range.</p>
+<p>Mapping Potentiometer sensor analog signal(0 to 1023)to the loudness of Buzzer(0 to 255).</p>
+<div class="highlight"><pre><span></span><code><span class="n">analogWrite</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to analogWrite(), the pin will generate a steady rectangular wave of the specified duty cycle until the next call to analogWrite() (or a call to digitalRead() or digitalWrite()) on the same pin.</p>
+<p><strong>Syntax:</strong></p>
+<p>analogWrite(<strong>pin, value</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>pin</strong>: the Arduino <code>pin</code> to write to. Allowed data types: int.</p>
+<p><strong>value</strong>: the duty cycle: between <code>0</code> (always off) and <code>255</code> (always on). Allowed data types: int.</p>
+<p>Writes an analog value (PWM wave) to the Buzzer.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>Adjust the potentiometer to adjust the volume of the buzzer beeps.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use a Grove cable to connect the Grove Buzzer to Seeeduino Lotus's digital interface <strong>D5</strong>.</p>
+<hr />
+<ul>
+<li><font size=5;font color=#314B9F >PWM Usage</font></li>
+</ul>
+<p>Now that we have learned the use of PWM, in addition to using PWM to control the buzzer's sound level, we can also use PWM to control the speed of the motor and the brightness of the LED lights and etc.</p>
+<p>However, the LED Module on the Grove Beginner Kit cannot be directly controlled by PWM, because the LED module is connected to D4, and as mentioned above, the PWM pins are 3, 5, 6, 9, 10, 11, and pin 4 is not a PWM pin. If you want to control the LED with PWM, you need to pull it down and use the Grove cable to connect to the Grove port with PWM function.</p>
+<p>All in all, when you want to use the PWM function, make sure to select those pins with a "~" symbol in front of their names.</p>
+<h3 id="lesson-5-making-an-light-induct-led">Lesson 5:  Making an Light Induct LED</h3>
+<p>The light sensor contains a photosensitive resistor to measure the intensity of light. The resistance of the photosensitive resistor decreases with the increase of light intensity. The LED will light up if the surrounding is dark, and stays off if the surrounding is bright.</p>
+<p>In the following sections, we will use Serial Monitor to observe results from our sensors so here comes the brief introduction!</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is Serial Monitor</strong></li>
+</ul>
+<p>Serial Monitor is a useful tool to observe results on Arduino, it can be very useful in terms of printing results from the sensors or debugging in general. You can also send data back to the controller via the serial monitor to do certain tasks! Note: Make sure the Serial data transfer match with the code.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Serial.jpg" /></p>
+<p>You can open the Serial Monitor by clicking <strong>Tools</strong> -&gt; <strong>Serial Monitor</strong>.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/20200217144001.jpg" /></p>
+<ul>
+<li><font size=5;font color=#314B9F >Components Involved</font><ol>
+<li>Seeeduino Lotus</li>
+<li>Grove LED</li>
+<li>Grove Light Sensor</li>
+<li>Grove Cable(If broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Light.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hardware analysis:</strong></p>
+<ul>
+<li>Input: Light Sensor</li>
+<li>Control: Seeeduino Lotus</li>
+<li>Output: LED module</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// Light Switch</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">sensorpin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A6</span><span class="p">;</span><span class="w"> </span><span class="c1">// Analog input pin that the sensor is attached to</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">    </span><span class="c1">// LED port</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">sensorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">        </span><span class="c1">// value read from the port</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">outputValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">        </span><span class="c1">// value output to the PWM (analog out)</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">sensorpin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// read the analog in value:</span>
+<span class="w">  </span><span class="n">sensorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">sensorpin</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensorValue</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sensorValue</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>You can also see the light intensity readings from the <strong>Serial Monitor</strong>, navigate to <strong>Tools</strong> -&gt; <strong>Serial Monitor</strong>.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud rates listed in the menu at the bottom right corner of its screen. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.</p>
+<p>An optional second argument configures the data, parity, and stop bits. The default is 8 data bits, no parity, one stop bit.</p>
+<p>The software running on the computer communicates with the development board, and the baud rate is 9600.</p>
+<p><strong>Syntax:</strong></p>
+<p>Serial.begin(<strong>speed</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>speed</strong>: Speed of Serial communication. i.e <code>9600</code>, <code>115200</code> and etc.</p>
+<p>Set the Serial baud rate to 9600.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensorValue</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takes the same forms as Serial.print().</p>
+<p><strong>Syntax:</strong></p>
+<p>Serial.println(<strong>val</strong>) or Serial.println(<strong>val</strong>, <strong>format</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>val</strong>: the value to print. Allowed data types: any data type.</p>
+<p><strong>format</strong>: specifies the number base (for integral data types) or the number of decimal places (for floating point types).</p>
+<p>Serial port print the Light sensor’s value.  So you open the <strong>serial monitor</strong> on the IDE interface, and you see the value of the output sensor.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>The LED module will light up if it's dark and stay off if it's bright.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use Grove Cable to connect the Grove LED to Seeeduino Lotus's digital signal interface <strong>D4</strong>,connect the Grove Light Sensor to Seeeduino Lotus's analog signal interface <strong>A6</strong>.</p>
+<h3 id="lesson-6-sound-sensitive-led-light">Lesson 6: Sound Sensitive LED Light</h3>
+<p>The sound sensor can detect the sound intensity of the environment, and its output is also simulated. I'm sure you've all been exposed to the sound control lights, but now we can do one ourselves, and with the basics, this experiment will be easy for you. Here used Serial Plotter to visualize results.</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is Serial Plotter</strong></li>
+</ul>
+<p>Serial Plotter is similar to Serial Monitor, allowing you to natively graph serial data from your Arduino to your computer in real-time. This is very useful when data needs to be visualized.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/SerialPlotter.png" /></p>
+<p>You can open the Serial Plotter by clicking <strong>Tools</strong> -&gt; <strong>Serial Plotter</strong>.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/serialplot.jpg" /></p>
+<ul>
+<li>
+<p><strong>Practice:</strong> The LED lights light up when the sound is made. When there is no sound and it is very quiet, the LED lights go off.</p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Components Involved</font></p>
+<ol>
+<li>Seeeduino Lotus</li>
+<li>Grove LED</li>
+<li>Grove Sound Sensor</li>
+<li>Grove cable(If broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sound.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Sound Control Light</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">soundPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Analog sound sensor is to be attached to analog</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// Digital LED is to be attached to digital</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">soundPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">soundState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">soundPin</span><span class="p">);</span><span class="w"> </span><span class="c1">// Read sound sensor’s value</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">soundState</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// if the sound sensor’s value is greater than 400, the light will be on.</span>
+<span class="w">  </span><span class="c1">//Otherwise, the light will be turned off</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">soundState</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">400</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>You can also see the light intensity readings from the <strong>Serial Plotter</strong>, navigate to <strong>Tools</strong> -&gt; <strong>Serial Plotter</strong>.</p>
+<p><strong>Note: You can also adjust the value according to your surrounding light intensity.</strong></p>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>The software running on the computer communicates with the development board, and the baud rate is 9600.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>This function is used to output data from the serial port, the output is what is contained in the double quotation marks.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>This statement is similar to the one above, except that <strong>serial.println</strong> has a newline return.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">soundState</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Serial port print the sound sensor’s value.  So you open the <strong>serial monitor</strong> on the IDE interface, and you see the value of the output sensor.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>The LED module will light up if the surrounding is loud enough.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use Grove cables to connect the Grove LED to Seeeduino Lotus's digital signal interface <strong>D4</strong>, Connect the Grove Sound Sensor to Seeeduino Lotus's analog signal interface <strong>A2</strong>.</p>
+<h3 id="lesson-7-displaying-data-on-oled">Lesson 7: Displaying Data on OLED</h3>
+<p>OLED Display can be used for many situations, where you could use it to visualize sensor readings!</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is Arduino Libraries</strong></li>
+</ul>
+<p>The Arduino environment can be extended through the use of libraries, just like most other programming platforms. Libraries provide extra functionalities for use in sketches, i.e. working with specific hardware or manipulating data. To use a library in a sketch, select it from <strong>Sketch</strong> -&gt;<strong>Include Library</strong>.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/zip.jpg" /></p>
+<p>For more information, please also visit <a href="https://wiki.seeedstudio.com/How_to_install_Arduino_Library/">How to install Arduino Libraries</a>.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Components Involved</font><ol>
+<li>Seeeduino Lotus</li>
+<li>Grove OLED</li>
+<li>Grove cable(If broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/OLED.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Install the <strong>U8g2 library</strong>: Navigate to <strong>Sketch</strong> -&gt; <strong>Include Library</strong> -&gt; <strong>Manage Libraries...</strong> and Search for the keyword "<strong>U8g2</strong>" in the <strong>Library Manager</strong>. It's the <strong>u8g2 library by oliver</strong>, and click then install.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/U8g2-lib.png" /></p>
+<ul>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+
+<span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span><span class="w"> </span><span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span><span class="w"> </span><span class="n">U8X8_PIN_NONE</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8x8_font_chroma48medium8_r</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><strong>Code analysis</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include &lt;&gt;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p><code>#include</code> is used to include outside libraries in your sketch. This gives the programmer access to a large group of standard C libraries (groups of pre-made functions), and also libraries written especially for Arduino.</p>
+<p>Note that <code>#include</code>, similar to <code>#define</code>, has no semicolon terminator, and the compiler will yield cryptic error messages if you add one.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+</code></pre></div>
+<p><strong>#include</strong> is an instruction that introduces a header file. Here we use the U8x8lib.h library.</p>
+<div class="highlight"><pre><span></span><code><span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span><span class="w"> </span><span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span><span class="w"> </span><span class="n">U8X8_PIN_NONE</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Once the object is declared, you can use functions from the library.</p>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Simplified setup procedure of the display for the Arduino environment. See the setup guide for the selection of a suitable U8g2 constructor.</p>
+<p><strong>Syntax:</strong></p>
+<p>u8x8.begin()</p>
+<p>Initialize the u8g2 library</p>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Some displays support a 180-degree rotation of the internal frame buffer. This hardware feature can be controlled with this procedure. Important: Redraw the complete display after changing the flip mode. Best is to clear the display first, then change the flip mode and finally redraw the content. Results will be undefined for any existing content on the screen.</p>
+<p><strong>Syntax:</strong></p>
+<p>u8x8.setFlipMode(<strong>mode</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>mode</strong>: <code>0</code> or <code>1</code></p>
+<p>Flips the display 180 degrees.</p>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Define the cursor for the print function. Any output of the print function will start at this position.</p>
+<p><strong>Syntax:</strong></p>
+<p>u8x8.setCursor(<strong>x, y</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>x, y</strong>: Column/row position for the cursor of the print function.</p>
+<p>Sets the draw cursor position.</p>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Define a u8x8 font for the glyph and string drawing functions.</p>
+<p><strong>Syntax:</strong></p>
+<p>u8x8.setFont(<strong>font_8x8</strong>)</p>
+<p>Set the font for display.</p>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>Draw the content on the OLED.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>Prints Hello World onto the OLED Display.</p>
+<p><strong>U8g2 Library Reference</strong></p>
+<p>If you want to more information about U8g2 library, please refer to <a href="https://github.com/olikraus/u8g2/wiki/u8g2reference">here</a>.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use Grove cable to connect the OLED to Seeeduino Lotus's <strong>I2C</strong> interface (Note: I2C's default address is 0x78).</p>
+<h3 id="lesson-8-detecting-surrounding-temperature-humidity">Lesson 8: Detecting Surrounding Temperature &amp; Humidity</h3>
+<p>Have you ever wondered about the temperature and humidity of your surroundings? Want to know the exact number? Want to wear a skirt or coat today depending on the temperature? Let's make a temperature meter!</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is Protocol Signal (I2C)</strong></li>
+</ul>
+<p><strong>Protocol signal:</strong> the protocol signal we use is I2C, so here is a brief introduction to I2C. I2C bus just needs two wires in the transmission of information connection between the devices: the SDA (Serial Data Line) and SCL (Serial Clock Line).</p>
+<p>These two lines are bidirectional I/O lines, the main component used to start the bus transfer data, and generate the clock to open transmission device, any devices that are addressing at this time is considered from the device.</p>
+<p>The relationship between master and slave(sender and receiver) on the bus is not constant but depends on the direction of data transmission. If the host wants to send data to the slave device, the host first addresses the slave device, then actively sends data to the slave device, and finally terminates the data transmission by the host. If the host is to receive data from the slave, the slave is first addressed by the master.</p>
+<p>The host then receives the data sent from the device, and the host terminates the receiving process. In this case. The host is responsible for generating the timing clock and terminating the data transfer.</p>
+<ul>
+<li>
+<p><strong>Practice:</strong> Let your OLED Display display the current ambient temperature and humidity.</p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Components Involved</font></p>
+<ol>
+<li>Seeeduino Lotus</li>
+<li>Grove OLED</li>
+<li>Grove Temperature and Temperature Sensor</li>
+<li>Grove cable(If broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Temp.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Install the <strong>Grove Temperature and Humidity Sensor(DHT11) library</strong>: Navigate to <strong>Sketch</strong> -&gt; <strong>Include Library</strong> -&gt; <strong>Manage Libraries...</strong> and Search for the keyword "<strong>Grove Temperature and Humidity Sensor(DHT11)</strong>" in the <strong>Library Manager</strong>, then install.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Temp-lib.png" /></p>
+<ul>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Temperature and Humidity Sensor</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;DHT.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#define DHTPIN 3     </span><span class="c1">// what pin we&#39;re connected to</span>
+<span class="cp">#define DHTTYPE DHT11   </span><span class="c1">// DHT 11</span>
+<span class="n">DHT</span><span class="w"> </span><span class="nf">dht</span><span class="p">(</span><span class="n">DHTPIN</span><span class="p">,</span><span class="w"> </span><span class="n">DHTTYPE</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span><span class="w"> </span><span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span><span class="w"> </span><span class="n">U8X8_PIN_NONE</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;DHTxx test!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">dht</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setPowerSave</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">humi</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">humi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8x8_font_chroma48medium8_r</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temp:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Humidity:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">humi</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;%&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">u8x8</span><span class="p">.</span><span class="n">refreshDisplay</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">humi</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>Defines variables to store readings.</p>
+<div class="highlight"><pre><span></span><code><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span><span class="w"></span>
+<span class="n">humi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Functions to be used to read temperature and humidity values from the sensor.</p>
+<p><strong>Syntax:</strong></p>
+<p><strong>dht.readTemperature()</strong> and <strong>dht.readHumidity()</strong>. Return type: float.</p>
+<p>Call these functions to read the temperature and humidity and store them in defined variables.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>The surrounding temperature and humidity appear on the OLED screen.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use Grove cable to connect the OLED to Seeeduino Lotus's <strong>I2C</strong> interface (Note: I2C's default address is 0x78). Connect the Grove Temperature and Humidity Sensor to Seeeduino Lotus's digital signal interface <strong>D3</strong>.</p>
+<h3 id="lesson-9-measuring-surrounding-air-pressure">Lesson 9: Measuring Surrounding Air Pressure</h3>
+<p>Grove Air Pressure Sensor(BMP280) is a breakout board for Bosch BMP280 high-precision and low-power digital barometer. This module can be used to measure temperature and atmospheric pressure accurately. As the atmospheric pressure changes with altitude, it can also measure the approximate altitude of a place.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Components Involved</font><ol>
+<li>Seeeduino Lotus</li>
+<li>Grove Air Pressure Sensor</li>
+<li>Grove cable(if broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/AirPressure.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Install the <strong>Grove Barometer Sensor library</strong>: Navigate to <strong>Sketch</strong> -&gt; <strong>Include Library</strong> -&gt; <strong>Manage Libraries...</strong> and Search for the keyword "<strong>Grove BMP280</strong>" in the <strong>Library Manager</strong>, then install.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/BMP-lib.png" /></p>
+<ul>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+<li>In this program, Barometer sensor information is sent from the sensor to Seeeduino via I2C bus and then Seeeduino printed them onto the serial monitor. Open the <strong>serial monitor</strong> to check the result.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Air pressure detection</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Seeed_BMP280.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+
+<span class="n">BMP280</span><span class="w"> </span><span class="n">bmp280</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">bmp280</span><span class="p">.</span><span class="n">init</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Device not connected or broken!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">pressure</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//get and print temperatures</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temp: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// The unit for  Celsius because original arduino don&#39;t support speical symbols</span>
+
+<span class="w">    </span><span class="c1">//get and print atmospheric pressure data</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Pressure: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">pressure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bmp280</span><span class="p">.</span><span class="n">getPressure</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Pa&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//get and print altitude data</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Altitude: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">calcAltitude</span><span class="p">(</span><span class="n">pressure</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;m&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="c1">//add a line between output of different times.</span>
+
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+</code></pre></div>
+<p><strong>#include</strong> is an instruction that introduces a header file. Here we use the <Wire.h> library, this library is included in Arduino IDE.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Seeed_BMP280.h&quot;</span><span class="cp"></span>
+</code></pre></div>
+<p>Represents the Seeed_BMP280.h header file that introduces the current path.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">bmp280</span><span class="p">.</span><span class="n">init</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Device not connected or broken!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>To initialize the air pressure sensor using bmp280.init(). Further, using if condition to check if it started properly then skips the message. If having trouble to initiate then prints the message as ! means NOT in programming.</p>
+<p><strong>Syntax:</strong></p>
+<p><strong>bmp280.init()</strong></p>
+<p>if the Air pressure sensor did not start properly, then prints out an error to the serial monitor.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">());</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Functions to be used to read temperature value from the sensor.</p>
+<p><strong>Syntax:</strong></p>
+<p><strong>bmp280.getTemperature()</strong>. Return type: float</p>
+<p>Prints the temperature data to the serial monitor.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">pressure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bmp280</span><span class="p">.</span><span class="n">getPressure</span><span class="p">());</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Functions to be used to read air pressure value from the sensor.</p>
+<p><strong>Syntax:</strong></p>
+<p><strong>bmp280.getPressure()</strong>. Return type: float</p>
+<p>Prints the current air pressure.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">calcAltitude</span><span class="p">(</span><span class="n">pressure</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Takes the pressure value can convert to altitude.</p>
+<p><strong>Syntax:</strong></p>
+<p>bmp280.calcAltitude(<strong>float</strong>). Return type: float</p>
+<p><strong>Parameter:</strong></p>
+<p><strong>float</strong>: Pressure value.</p>
+<p>Prints the amplitude.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>The Air pressure readings are display on the Serial Monitor.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use Grove cable to connect Grove Air Pressure Sensor to Seeeduino Lotus's <strong>I2C</strong> interface using a Grove cable (note: I2C default address is 0x77 or 0x76).</p>
+<h3 id="lesson-10-sensing-movement">Lesson 10: Sensing Movement</h3>
+<p>This is the last sensor, the triaxial accelerometer, and with this module, you can easily add motion monitoring to your design. So we can do a lot of interesting little experiments on the basis of the motion.</p>
+<ul>
+<li>
+<p><strong>Practice:</strong> when motion is detected, the buzzer gives an alarm indicating that the object is in motion.</p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Components Involved</font></p>
+<ol>
+<li>Seeeduino Lotus</li>
+<li>Grove 3-axis Accelerometer</li>
+<li>Grove cable(if broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Gyro.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Download the <a href="https://github.com/Seeed-Studio/Seeed_Arduino_LIS3DHTR">3-Axis Digital Accelerometer( ±2g to 16g)</a>  from Github. Click on <strong>Sketch</strong> &gt; <strong>Include library</strong> &gt; <strong>Add .ZIP library</strong>, import the library into the IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+<li>In this program, acceleration information is sent from the sensor to Seeeduino via I2C bus and then Seeeduino printed them onto the serial monitor. Open the <strong>serial monitor</strong> to check the result.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Gravity Acceleration</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;LIS3DHTR.h&quot;</span><span class="cp"></span>
+<span class="cp">#ifdef SOFTWAREWIRE</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftwareWire.h&gt;</span><span class="cp"></span>
+<span class="w">    </span><span class="n">SoftwareWire</span><span class="w"> </span><span class="nf">myWire</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">SoftwareWire</span><span class="o">&gt;</span><span class="w"> </span><span class="n">LIS</span><span class="p">;</span><span class="w">       </span><span class="c1">//Software I2C</span>
+<span class="w">    </span><span class="cp">#define WIRE myWire</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+<span class="w">    </span><span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">TwoWire</span><span class="o">&gt;</span><span class="w"> </span><span class="n">LIS</span><span class="p">;</span><span class="w">           </span><span class="c1">//Hardware I2C</span>
+<span class="w">    </span><span class="cp">#define WIRE Wire</span>
+<span class="cp">#endif</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="w">    </span><span class="n">LIS</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIRE</span><span class="p">,</span><span class="w"> </span><span class="mh">0x19</span><span class="p">);</span><span class="w"> </span><span class="c1">//IIC init</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">LIS</span><span class="p">.</span><span class="n">setOutputDataRate</span><span class="p">(</span><span class="n">LIS3DHTR_DATARATE_50HZ</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">LIS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;LIS3DHTR didn&#39;t connect.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//3 axis</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationX</span><span class="p">());</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationY</span><span class="p">());</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;z:&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationZ</span><span class="p">());</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;LIS3DHTR.h&quot;</span><span class="cp"></span>
+<span class="cp">#ifdef SOFTWAREWIRE</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SoftwareWire.h&gt;</span><span class="cp"></span>
+<span class="w">    </span><span class="n">SoftwareWire</span><span class="w"> </span><span class="nf">myWire</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">SoftwareWire</span><span class="o">&gt;</span><span class="w"> </span><span class="n">LIS</span><span class="p">;</span><span class="w">   </span><span class="c1">//Software I2C</span>
+<span class="w">    </span><span class="cp">#define WIRE myWire</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+<span class="w">    </span><span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">TwoWire</span><span class="o">&gt;</span><span class="w"> </span><span class="n">LIS</span><span class="p">;</span><span class="w">        </span><span class="c1">//Hardware I2C</span>
+<span class="w">    </span><span class="cp">#define WIRE Wire</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+<p>Initializing the module using software I2C or hardware I2C.</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+</code></pre></div>
+<p>Code stops here if don't open the serial monitor, so open serial monitor.</p>
+<div class="highlight"><pre><span></span><code><span class="n">LIS</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIRE</span><span class="p">,</span><span class="w"> </span><span class="mh">0x19</span><span class="p">);</span><span class="w"></span>
+<span class="n">LIS</span><span class="p">.</span><span class="n">setOutputDataRate</span><span class="p">(</span><span class="n">LIS3DHTR_DATARATE_50HZ</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong> Initialize the accelerator.</p>
+<p><strong>Syntax:</strong> <code>LIS.begin(Wire, address)</code>.</p>
+<p><strong>Description:</strong> Sets the output data rate of the accelerator.</p>
+<p><strong>Syntax:</strong> <code>LIS.setOutputDataRate(odr_type_t odr)</code>.</p>
+<p>Initialize the accelerator and set the output rate to 50Hz.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationX</span><span class="p">());</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationY</span><span class="p">());</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;z:&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationZ</span><span class="p">());</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Functions to be used to read X-axis value from the sensor.</p>
+<p><strong>Syntax:</strong></p>
+<p><strong>LIS.getAccelerationX()</strong>. Return type: float.</p>
+<p><strong>Description:</strong></p>
+<p>Functions to be used to read Y-axis value from the sensor.</p>
+<p><strong>Syntax:</strong></p>
+<p><strong>LIS.getAccelerationY()</strong>. Return type: float.</p>
+<p><strong>Description:</strong></p>
+<p>Functions to be used to read Z-axis value from the sensor.</p>
+<p><strong>Syntax:</strong></p>
+<p><strong>LIS.getAccelerationZ()</strong>. Return type: float.</p>
+<p>Prints the 3 axis data to the serial monitor.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>The 3-axis accelerator readings are displayed on the Serial Monitor.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Use Grove cable to connect Grove 3-axis Accelerometer to Seeeduino Lotus's <strong>I2C</strong> interface using a Grove cable (note: I2C default address is 0x19).</p>
+<h2 id="bonus-projects">Bonus Projects</h2>
+<h3 id="project-1-music-dynamic-rhythm-lamp">Project 1:  Music dynamic rhythm lamp</h3>
+<ul>
+<li>
+<p><strong>Project description:</strong> In this experiment, we will make the buzzer play pleasant music and the led lights flash according to the music frequency and beat.</p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Components Involved</font></p>
+<ol>
+<li>Seeeduino Lotus</li>
+<li>Grove LED</li>
+<li>Buzzer</li>
+<li>Grove Cables(if broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/project1.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Music Dynamic Rhythm Lamp</span>
+<span class="cp">#define NTD0 -1</span>
+<span class="cp">#define NTD1 294</span>
+<span class="cp">#define NTD2 330</span>
+<span class="cp">#define NTD3 350</span>
+<span class="cp">#define NTD4 393</span>
+<span class="cp">#define NTD5 441</span>
+<span class="cp">#define NTD6 495</span>
+<span class="cp">#define NTD7 556</span>
+
+<span class="cp">#define NTDL1 147</span>
+<span class="cp">#define NTDL2 165</span>
+<span class="cp">#define NTDL3 175</span>
+<span class="cp">#define NTDL4 196</span>
+<span class="cp">#define NTDL5 221</span>
+<span class="cp">#define NTDL6 248</span>
+<span class="cp">#define NTDL7 278</span>
+
+<span class="cp">#define NTDH1 589</span>
+<span class="cp">#define NTDH2 661</span>
+<span class="cp">#define NTDH3 700</span>
+<span class="cp">#define NTDH4 786</span>
+<span class="cp">#define NTDH5 882</span>
+<span class="cp">#define NTDH6 990</span>
+<span class="cp">#define NTDH7 112</span>
+
+<span class="cp">#define WHOLE 1</span>
+<span class="cp">#define HALF 0.5</span>
+<span class="cp">#define QUARTER 0.25</span>
+<span class="cp">#define EIGHTH 0.25</span>
+<span class="cp">#define SIXTEENTH 0.625</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">tune</span><span class="p">[]</span><span class="o">=</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTDL5</span><span class="p">,</span><span class="n">NTD0</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="w"></span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="n">durt</span><span class="p">[]</span><span class="o">=</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">tonepin</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ledp</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">tonepin</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">length</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">tune</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">tune</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">x</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span><span class="n">x</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">tone</span><span class="p">(</span><span class="n">tonepin</span><span class="p">,</span><span class="n">tune</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="n">noTone</span><span class="p">(</span><span class="n">tonepin</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#define NTD</span>
+</code></pre></div>
+<p>Here is the definition of the frequency of the D key, which is divided into bass, alto, and treble.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define WHOLE 1</span>
+<span class="cp">#define HALF 0.5</span>
+<span class="cp">#define QUARTER 0.25</span>
+<span class="cp">#define EIGHTH 0.25</span>
+<span class="cp">#define SIXTEENTH 0.625</span>
+</code></pre></div>
+<p>Note: rhythm is divided into one beat, half beat, &frac14; beat, &#8539; beat, we specify a beat note time is 1;Half beat is 0.5;&frac14; beat is 0.25;&#8539; of 0.125.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">tune</span><span class="p">[]</span><span class="o">=</span><span class="p">...</span><span class="w"></span>
+</code></pre></div>
+<p>List the frequencies according to the spectrum.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">durt</span><span class="p">[]</span><span class="o">=</span><span class="p">...</span><span class="w"></span>
+</code></pre></div>
+<p>List the beats according to the spectrum.</p>
+<div class="highlight"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+<p>Control LED lights on and off respectively.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>The buzzer will beep a tune while the LED module will flicker with same frequency.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Connect Grove LED to Seeeduino Lotus's digital signal interface <strong>D4</strong>, connect Buzzer to Seeeduino Lotus's digital signal interface <strong>D5</strong>.</p>
+<h3 id="project-2-make-an-intelligent-sound-light-induction-desk-lamp">Project 2: Make an intelligent sound-light induction desk lamp</h3>
+<ul>
+<li>
+<p><strong>Project description:</strong> as the name implies, this project is to make a small lamp controlled by Sound and Light. We need to use the LED module as output. Light sensor and sound sensor are used for input signals. In this way, you can achieve the function of the smart desk lamp: if the surrounding sound level is above certain pre-set value, then the LED light up, or if the surrounding light intensity is below certain value, the LED module also light up.</p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Components Involved</font></p>
+<ol>
+<li>Seeeduino Lotus</li>
+<li>Grove LED</li>
+<li>Light Sensor</li>
+<li>Sound Sensor</li>
+<li>Grove cable(If broken out)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/project2.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>Module connection:</strong><ul>
+<li>Default connection by PCB stamp hole.</li>
+</ul>
+</li>
+<li>The Seeeduino is then connected to the computer via a USB cable.</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >Software Code</font></p>
+<ul>
+<li>Open Arduino IDE.</li>
+<li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//light Induction Desk Lamp</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">soundPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Analog sound sensor is to be attached to analog</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">lightPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A6</span><span class="p">;</span><span class="w"> </span><span class="c1">//Analog light sensor is to be attached to analog</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// Digital LED is to be attached to digital</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">lightPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">soundPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">soundState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">soundPin</span><span class="p">);</span><span class="w"> </span><span class="c1">// Read sound sensor’s value</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">lightState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">lightPin</span><span class="p">);</span><span class="w"> </span><span class="c1">// Read light sensor’s value</span>
+<span class="w">  </span><span class="c1">// if the sound sensor&#39;s value is greater than 500 or the sound sensor&#39;s is less than 200, the light will be on.</span>
+<span class="w">  </span><span class="c1">//Otherwise, the light will be turned off</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">soundState</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">lightState</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"> </span><span class="c1">//You can add the &quot;//&quot; to remove the delay</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">soundState</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">lightState</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>In parentheses is a logical expression. Both <strong>&amp;&amp;</strong> and <strong>||</strong> are commonly used in logical expressions. The common usage is <strong>if (expression 1 || expression 2)</strong> and <strong>if (expression 1 &amp;&amp; expression 2)</strong>.</p>
+<p><strong>||</strong> represents "<strong>or</strong>", satisfies one of them, the whole expression is true, and satisfies the condition of the if judgment.</p>
+<p><strong>&amp;&amp;</strong> means "<strong>and</strong>", the statement in if{} is executed only if all expressions in parentheses are true.</p>
+<p><strong>Demo Effect and Serial Print Result:</strong></p>
+<p>If the surrounding sound is loud enough or light intensity is low, the LED module will light up more intensity.</p>
+<ul>
+<li><font size=5;font color=#314B9F >Breakout Guide</font></li>
+</ul>
+<p>Connect the Grove LED to Seeeduino Lotus's digital signal interface <strong>D4</strong>, Connect the Light Sensor to Seeeduino Lotus's analog signal interface <strong>A1</strong>. Connect the Sound Sensor to Seeeduino Lotus's analog signal interface <strong>A2</strong> using a Grove cable.</p>
+<h2 id="make-your-own-modules-boards">Make Your Own Modules &amp; Boards</h2>
+<p>After this period of study, you already have a systematic understanding of Arduino and open-source hardware, so why not go further and try to make your own module or development board?</p>
+<h3 id="eda">EDA</h3>
+<p>To design your own board, you will need to design your own module's schematics, which requires an EDA tool to do so. Here recommends an open-source EDA software.</p>
+<ul>
+<li><strong>KiCAD</strong></li>
+</ul>
+<p><a href="https://www.kicad-pcb.org/">KiCad</a> is a free software suite for electronic design automation. It facilitates the design of schematics for electronic circuits and their conversion to PCB designs. It features an integrated environment for schematic capture and PCB layout design. The programs handle Schematic Capture and PCB Layout with Gerber output. The suite runs on Windows, Linux, and macOS and is licensed under GNU GPL v3.</p>
+<ul>
+<li><strong>Geppetto</strong></li>
+</ul>
+<p>If you don’t want to work on schematic or layout yourself, but you want to convert your prototype based on Seeed’s modules into an integrated product, we highly recommend you to try Geppetto.</p>
+<p><a href="www.seeedstudio.com/geppetto">Geppetto</a> is, by far, the easiest and least expensive way to produce production-quality electronics. You don’t need to know about resistors, capacitors, inductors, routing paths or anything EE to design your own module. Geppetto is drag &amp; drop simple... anyone can create professional IoT devices. To make it more convenient for you, Geppeto has a library for Seeed, so you can design your own Grove modules with ease!</p>
+<h3 id="pcb-services">PCB Services</h3>
+<p>After you’re done with your design, check out the <a href="https://www.seeedstudio.com/fusion_pcb.html">Seeed Fusion PCBA service</a>, which can help translate your designs into an actual functioning device.</p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Fusion.png" /></p>
+<p>Seeed Studio has its very own <a href="https://www.seeedstudio.com/opl.html">Open Parts Library (OPL)</a> which is a collection of over 10,000 commonly used components specifically sourced for the Seeed Fusion PCBA Service. To speed up the process of PCB design, Seeed is building the component libraries for KiCad and Eagle. When all components are sourced from Seeed’s PCBA OPL and used with the <a href="https://www.seeedstudio.com/fusion_pcb.html">Seeed Fusion PCB Assembly (PCBA) service</a>, the entire PCBA production time can be reduced from 20 working days to a mere 7 days.</p>
+<h2 id="schematic-online-viewer">Schematic Online Viewer</h2>
+<div class="altium-ecad-viewer" data-project-src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-for-Arduino-SCH-PCB.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+<h2 id="resources">Resources</h2>
+<ol>
+<li>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-For-ArduinoPDF.pdf"><strong>Grove Beginner Kit for Arduino Wiki [PDF]</strong></a></p>
+</li>
+<li>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-for-Arduino-SCH-PCB.zip"><strong>Grove Beginner Kit for Arduino Schematic Design Files</strong></a></p>
+</li>
+<li>
+<p><strong>Modules Libraries on Github:</strong></p>
+<ul>
+<li><a href="https://github.com/olikraus/U8g2_Arduino">OLED Display</a></li>
+<li><a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">Temperature &amp; Humidity Sensor</a></li>
+<li><a href="https://github.com/Seeed-Studio/Grove_BMP280">Air Pressure Sensor</a></li>
+<li><a href="https://github.com/Seeed-Studio/Seeed_Arduino_LIS3DHTR">3-Axis Accelerator</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-beginner-kit-for-arduino-datasheet.zip"><strong>Sensor Datasheet</strong></a></p>
+</li>
+<li>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/GroveBeginnerKitFirmwareFINAL.zip"><strong>Initial Arduino Firmware Demo</strong></a></p>
+</li>
+<li>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-For-Arduino-Resources-in-one(20200401).7z"><strong>Grove Beginner Kit For Arduino Resources in one(20200401)[7z]</strong></a></p>
+</li>
+</ol>
+<h2 id="more-learning">More Learning</h2>
+<ul>
+<li><a href="https://github.com/256ericpan/LSTM_IoT">LSTM for live IoT data prediction</a></li>
+</ul>
+<h2 id="tech-support">Tech Support</h2>
+<p>Please submit any technical issue into our <a href="https://forum.seeedstudio.com/">forum</a><br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://files.seeedstudio.com/wiki/Wiki_Banner/new_product.jpg" /></a></p></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../chapter2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter2" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Chapter2
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              License
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
