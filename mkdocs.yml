@@ -1,7 +1,8 @@
 site_name: Lora Book
 site_url: https://arduitronics.github.io/lora-book/
 nav:
-    - Home: index.md
+    - Quick Start: quickstart.md
+    - How to : howto.md
     - Chapter1: chapter1.md
     - Chapter2: chapter2.md
     - ChapterX: chapterX.md

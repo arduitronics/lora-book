@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://arduitronics.github.io/lora-book/license/">
+        <link rel="canonical" href="https://arduitronics.github.io/lora-book/quickstart/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>License - Lora Book</title>
+        <title>Quick Start - Lora Book</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#quick-start-1-lorawan" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              License
+              Quick Start
             
           </span>
         </div>
@@ -178,11 +178,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../quickstart/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Quick Start
       </a>
+      
     </li>
   
 
@@ -253,48 +263,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          License
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
         License
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    สงวนลิขสิทธิ์
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -331,21 +304,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    สงวนลิขสิทธิ์
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -359,16 +319,37 @@
                 
 
 
-  <h1>License</h1>
-
-<h2 id="_1">สงวนลิขสิทธิ์</h2>
-<p>&emsp; ข้อความบนหน้าเว็บ arduitronics.github.io/ESP-Kit1 นี้เป็นผลงานของ <a href="http://www.arduitronics.com">Arduitronics.com</a></p>
+<h1 id="quick-start-1-lorawan">Quick start 1:  LoRaWAN คืออะไร</h1>
+<p>ในส่วนนี้จะเริ่มต้นจากการแนะนำว่า LoRa คืออะไร และ แตกต่างจากเทคโลยีการสื่อสารประเภทอื่นๆ เช่น WiFi, Bluetooth, Cellular อย่างไร</p>
+<p>มาเริ่มจากคำว่า LoRa กันก่อน  LoRa ย่อมาจาก Long Range ดังนั้นจึงหมายถึงเทคโนโลยีการสื่อสารที่เน้นระยะไกล (ในระดับกิโลเมตร จนถึง หลาย 10 กิโลเมตร) โดยใช้พลังงานน้อยๆ </p>
+<p>ในทางเทคนิคแล้วหากใช้คำว่า LoRa จะเป็นการพูดถึงเทคนิคในระดับฮาร์แวร์อุปกรณ์สื่อสาร โปรโตคอลในการส่งสัญญาณวิทยุจากจุดหนึ่งไปอีกจุดหนึ่ง สำหรับการส่งสัญญาณแบบ LoRa แล้วจะใช้เทคนิคที่เรียกว่า "chirp spread spectrum" ซึ่งเป็นเทคโนโลยีที่มีพื่นฐานคล้ายการมอดูเลตแบบ Frequency Shift Keying (FSK) แต่มีข้อดีคือใช้พลังงานต่ำและส่งได้ระยะไกลกว่า มีการใช้งานมานานหลายสิบปีแล้วโดยเฉพาะในวงการทหาร และ เทคโนโลยีอวกาศ  มาในระยะหลังนี้ได้มีการพัฒนาเพื่อใช้ในเชิงพานิชย์</p>
+<p>การใช้งาน LoRa ในการสื่อสารนั้น อาจจะเป็นการส่งข้อมูลจากจุดหนึ่งไปอีกจุดหนึ่งที่อยู่ห่างไกลกันเป็นระยะทางเป็นกิโลเมตร  แต่เป็นข้อมูลขนาดสั้นๆ ใช้ระยะเวลาส่งไม่นาน และต้องการใช้งานกับแบตเตอรี่ขนาดเล็ก (เช่น AA หรือ LiPo 18650) สามารถอยู่ได้นานเป็นปีๆ โดยอาจจะเป็นการส่งข้อมูลที่อ่านค่าได้จากเซนเซอร์ทุกๆวัน หรือ ส่งข้อมูลเมื่อได้รับการ interrupt จากเซนเซอร์หรือไมโครคอนโทรลเลอร์</p>
+<p>ตัวอย่างการใช้งาน LoRa ได้แก่ อุปกรณ์ตรวจวัดค่าคุณภาพอากาศ  อุปกรณ์ตรวจวัดพิกัด GPS  อุปกรณ์ตรวจวัดค่าคุณภาพของสภาพแวดล้อมเพื่อการเกษตรแม่นยำ</p>
+<p>ดังนั้น LoRa มีข้อแตกต่างที่ชัดเจนกับการสื่อสารแบบอื่นดังนี้<br />
+- Bluetooth ส่งข้อมูลขนาดใหญ่ ระยะทางสั้นๆ (ต่ำกว่า 1 เมตร) ใช้พลังงานน้อยๆ<br />
+- ระบบ WiFi ที่ใช้ส่งข้อมูลขนาดใหญ่ แต่อยู่ภายในรัศมีทำงานไม่เกิน 20-30 เมตร (นอกจากจะติดตั้งหลายจุด) อุปกรณ์รับส่งติดตั้งอยู่กับแหล่งพลังงาน เช่น แบตเตอรี่โทรศัพท์มือถือ หรือ เสียบไฟบ้าน 220 V <br />
+- ระบบเครือข่ายโทรศัพท์เคลื่อนที่ (Cellular) ใช้ส่งข้อมูลขนาดใหญ่ ภายในรัศมีทำการของเครือข่ายโทรศัพท์ ใช้กำลังส่งได้สูง</p>
+<p><img alt="ESP32 solo1 โดย Espressif!" src="https://github.com/arduitronics/ESP-kit1/raw/main/docs/img/ESP32_solo1.jpeg" title="ESP32" /></p>
+<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<h1 id="how-to-2-message-helium-gateway">How to 2: การส่ง Message ไปที่ Helium Gateway</h1>
+<p>ในส่วนนี้เป็นการส่งข้อความจาก Lora Node ไปที่ Helium Gateway</p>
+<h2 id="commands">Commands</h2>
 <ul>
-<li>ผู้จัดทำมีวัตถุประสงค์เพื่อเป็นเอกสารประกอบการใช้งานผลิตภัณฑ์ที่เกี่ยวข้องกับสินค้าของ <a href="http://www.arduitronics.com">Arduitronics.com</a> เท่านั้น  </li>
-<li>ผู้จัดทำไม่รับผิดชอบต่อความเสียหายใดๆ หรือค่าใช้จ่ายที่เกิดขึ้นของท่านเนื่องจากข้อความในเว็บไซต์นี้  </li>
-<li>ห้ามมิให้ผู้ใดคัดลอกส่วนหนึ่งส่วนใด หรือ ทั้งหมด โดยนำไปใช้เพื่อการพาณิชย์ ก่อนการได้รับอนุญาต  หากพบการฝ่าฝืน จะดำเนินการตามกฎหมายลิขสิทธิ์ที่เกี่ยวข้อง</li>
-<li>ข้อความในเอกสารนี้ได้รับอนุญาตให้แปลมาจาก <a href="https://wiki.seeedstudio.com/">Seeed Wiki</a> อย่างถูกต้อง</li>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs -h</code> - Print help message and exit.</li>
 </ul>
+<h2 id="project-layout">Project layout</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre></div>
+</td></tr></table>
 
               
             </article>
@@ -381,30 +362,15 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        
-        <a href="../chapterX/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ChapterX" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              ChapterX
-            </div>
-          </div>
-        </a>
-      
       
         
-        <a href="../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About" rel="next">
+        <a href="../howto/" class="md-footer__link md-footer__link--next" aria-label="Next: How to" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              About
+              How to
             </div>
           </div>
           <div class="md-footer__button md-icon">

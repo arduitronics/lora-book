@@ -1,4 +1,4 @@
-# ข้อมูลทั่วไป
+# How to 1:  การติดตั้ง Helium Gateway
 เอกสารต่อไปนี้เป็นหนังสือแนะนำ LORA และคู้มือการทดลองสำหรับอุปกรณ์ในชุด LORA Kit1 โดย [Arduitronics.com](https://www.arduitronics.com) 
 
 บอร์ดไมโครคอนโทรลเลอร์ที่สามารถใช้งานคู่กับ LORA มีหลายลักษณะ เช่น NodeMCU โดยมีคุณสมบัติการทำงานที่แตกต่างกัน 
@@ -8,6 +8,8 @@
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
+# How to 2: การส่ง Message ไปที่ Helium Gateway 
+ในส่วนนี้เป็นการส่งข้อความจาก Lora Node ไปที่ Helium Gateway
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
