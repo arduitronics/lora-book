@@ -35,6 +35,13 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ในกรณีที่ใช้การส่งสัญญาณแบบ LoRa มาประกอบกันเพื่อให้บริการพื่นที่ขนาดใหญ่แบบ LoRaWAN  การใช้บริการ อุปกรณ์ในโครงข่ายก็จะยังมีคุณสมบัติการทำงาน (ส่งได้ระยะไกล ใช้พลังงานน้อย ปริมาณข้อมูลน้อย) เช่นเดียวกับ LoRa แต่เชื่อมต่อเข้าเป็นส่วนหนึ่งของโตรงข่ายการสื่อสารแบบ LoRaWAN นั่นเอง
 
+ทีนี้เพื่อให้เกิดความสมบูรณ์ของการใช้งานของระบบ Internet of Things (IOT) ที่มีขนาดใหญ่ระดับจังหวัด เช่น โครงการ Smart city หรือ ย่อลงมาใช้งานแบบ Smart Agriculture ในที่นี้ขอยกตัวอย่างเป็นโครงการ Smart city ที่ต้องการวางโครงข่ายเพื่อตรวจสอบคุณภาพอากาศทั่วเมือง และส่งข้อมูลเพื่อแสดงผลตามจุดที่ติดตั้งแสดงเป็นแผนที่และค่าที่อ่านได้บนโทรศัพท์มือถือ   
+![LoRaWAN](https://github.com/arduitronics/lora-book/blob/main/docs/img/lorawansmartcity.jpg?raw=true "LoRaWAN smart city")
+ที่มา เว็บ LoRa Aliiance https://lora-alliance.org/  
+
+
+![LoRaWAN](https://github.com/arduitronics/lora-book/blob/main/docs/img/lorawan.jpg?raw=true "LoRaWAN Network Architecture")
+ที่มา เว็บ LoRa Aliiance https://lora-alliance.org/  
 
 ในส่วนนี้เป็นการส่งข้อความจาก Lora Node ไปที่ Helium Gateway
 ## Commands
