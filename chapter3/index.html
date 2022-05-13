@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://arduitronics.github.io/lora-book/chapter2/">
+        <link rel="canonical" href="https://arduitronics.github.io/lora-book/chapter3/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>Chapter2 - Lora Book</title>
+        <title>Chapter3 - Lora Book</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2" class="md-skip">
+        <a href="#3-lorawan" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter2
+              Chapter3
             
           </span>
         </div>
@@ -223,6 +223,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/" class="md-nav__link">
+        Chapter2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -233,12 +248,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Chapter2
+          Chapter3
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Chapter2
+        Chapter3
       </a>
       
         
@@ -255,30 +270,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    บทที่ 2 พื้นฐานระบบสื่อสาร
+  <a href="#3-lorawan" class="md-nav__link">
+    บทที่ 3 LoRaWAN
   </a>
   
-    <nav class="md-nav" aria-label="บทที่ 2 พื้นฐานระบบสื่อสาร">
+    <nav class="md-nav" aria-label="บทที่ 3 LoRaWAN">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lora-physical-layer" class="md-nav__link">
-    Lora Physical layer
+  <a href="#lorawan-protocol" class="md-nav__link">
+    LoraWAN Protocol
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#usb" class="md-nav__link">
-    การติดตั้งไดรเวอร์ของพอร์ต USB
+  <a href="#abp" class="md-nav__link">
+    ABP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arduino-ide" class="md-nav__link">
-    เริ่มต้นใช้งาน Arduino IDE
+  <a href="#otaa" class="md-nav__link">
+    OTAA
   </a>
   
 </li>
@@ -292,21 +307,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter3/" class="md-nav__link">
-        Chapter3
-      </a>
     </li>
   
 
@@ -366,30 +366,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    บทที่ 2 พื้นฐานระบบสื่อสาร
+  <a href="#3-lorawan" class="md-nav__link">
+    บทที่ 3 LoRaWAN
   </a>
   
-    <nav class="md-nav" aria-label="บทที่ 2 พื้นฐานระบบสื่อสาร">
+    <nav class="md-nav" aria-label="บทที่ 3 LoRaWAN">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lora-physical-layer" class="md-nav__link">
-    Lora Physical layer
+  <a href="#lorawan-protocol" class="md-nav__link">
+    LoraWAN Protocol
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#usb" class="md-nav__link">
-    การติดตั้งไดรเวอร์ของพอร์ต USB
+  <a href="#abp" class="md-nav__link">
+    ABP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arduino-ide" class="md-nav__link">
-    เริ่มต้นใช้งาน Arduino IDE
+  <a href="#otaa" class="md-nav__link">
+    OTAA
   </a>
   
 </li>
@@ -413,60 +413,12 @@
                 
 
 
-  <h1>Chapter2</h1>
+  <h1>Chapter3</h1>
 
-<h2 id="2">บทที่ 2 พื้นฐานระบบสื่อสาร</h2>
-<h3 id="lora-physical-layer">Lora Physical layer</h3>
-<p>เริ่มต้นการลงมือใช้งาน ESP8266 หรือ NodeMCU จากการลงโปรแกรม</p>
-<p>Arduino IDE คือ ซอฟแวร์ที่รวบรวมเครื่องมือต่างๆ (การติอต่อกับ ฮาร์ดแวร์ การ Compile โปรแกรม Editor ที่ใช้ในการเขียน Skecth การทดสอบการทำงานของโปรแกรมที่พัฒนาขึ้นบนบอร์ด) ซื่งจำเป็นที่ต้องใช้ในการพัฒนาระบบไมโครคอนโทรลเลอร์
-สามารถดาว์นโหลดโปรแกรม Arduino IDE <a href="https://www.arduino.cc/en/software">ได้ที่</a> โดยตุณสามารถเลือกใช้ตาม OS ของคุณ</p>
-<p align="center">
-<img src="https://files.seeedstudio.com/wiki/Seeeduino_Stalker_V3_1/images/Download_IDE.png" alt="alt text" title="IDE Download" width="500"/>
-</p>
-
-<h3 id="usb">การติดตั้งไดรเวอร์ของพอร์ต USB</h3>
-<ul>
-<li>บอร์ด Arduino ติดต่อกับเครื่องพีซีผ่านเคเบิ่ลที่ใช้หัว USB รุ่นต่างๆ ซึ่งไดรเวอร์ของหัว USB ที่ต้องติดตั้งนั้น ขึ้นกับชนิดของ Chip ที่ใช้บนบอร์ด Arduino ของคุณ หมายเหตุ: โดยปกติแล้วชนิดของชิบ USB จะถูกระบุไว้บนด้านหลังของตัวบอร์ด</li>
-<li>ดาวน์โหลด ไดรเวอร์ของ USB รุ่น CP2102. หมายเหตุ: โปรดเลือกตาม OS ที่คุณใช้</li>
-<li>หลังจากติดตั้งไดรเวอร์สำเร็จแล้ว ให้ต่อบอร์ด Arduino โดยใช้สายแลหัวต่อ USB เข้ากับเครื่องคอมพิวเตอร์</li>
-<li>สำหรับผู้ใช้ระบบปฏิบัติการ Windows คุณสามารถดูพอร์ตที่ติดตั้งได้จาก 'My Computer' -&gt; Properties -&gt; Hardware -&gt; Device Management จะเห็น 'COM' และตัวเลขแสดงพอร์ต</li>
-<li>สำหรับผู้ใช้ Mac OS คุณสามารถดูพอร์ตที่ติดตั้งได้จาก  ที่มุมบนด้านซ้าย และเลือก About this Mac -&gt; System Report... -&gt; USB. จะเห็น CP2102 USB Driver</li>
-<li>กรณีที่ยังไม่ได้ติดตั้งไดรเวอร์ หรือ ติดตั้งไม่ถูกต้องกับ Chip ที่ใช้ จะเห็น "unknown device" ใน device manager ให้ติดตั้งไดรเวอร์ใหม่</li>
-</ul>
-<h3 id="arduino-ide">เริ่มต้นใช้งาน Arduino IDE</h3>
-<ol>
-<li>ปิดโปรแกรม Arduino IDE บนเครื่อง PC ของคุณ</li>
-<li>คลิ๊กเลือก Tools -&gt; Board เพื่อเลือกชนิดของบอร์ด และเลือก Arduino/Generic ESP8266 เป็นบอร์ดที่คุณใช้</li>
-<li>คลิ๊ก Tools -&gt; Port เพื่อเลือก Port ที่ถูกต้อง (เลือกให้ตรงกับ Port ที่แสดงไว้ในขั้นตอนก่อนหน้า). ในตัวอย่างนี้เลือก COM6</li>
-<li>สร้างไฟล์ใหม่และใช้ชื่อ HelloWorld.ino จากนั้น copy โปรแกรมไปไว้ในไฟล์ที่สร้าง:</li>
-</ol>
-<p><font size=5;font color=#314B9F >การต่อวงจร</font></p>
-<ul>
-<li><strong>Module connection</strong><ul>
-<li>ต่อสาย USB เข้ากับบอร์ดและช่อง USB ของเครื่องคอมพิเตอร์</li>
-</ul>
-</li>
-</ul>
-<p><font size=5;font color=#314B9F >โค้ดที่ใช้ทดสอบ</font></p>
-<ul>
-<li>เปิด Arduino IDE.</li>
-<li>Copy โค้ดด้านล่าง และกด Verify เพื่อตรวจสอบความถูกต้องของ Syntax และความผิดพลาดอื่นๆ จากนั้น Upload โค้ด</li>
-</ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span><span class="c1">// initializes the serial port with a baud rate of 9600</span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;hello, world&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints a string to a serial port</span>
-<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">//delay of 1 second</span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<h2 id="3-lorawan">บทที่ 3 LoRaWAN</h2>
+<h3 id="lorawan-protocol">LoraWAN Protocol</h3>
+<h3 id="abp">ABP</h3>
+<h3 id="otaa">OTAA</h3>
 
               
             </article>
@@ -480,7 +432,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../chapter1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter1" rel="prev">
+        <a href="../chapter2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter2" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -489,20 +441,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Chapter1
+              Chapter2
             </div>
           </div>
         </a>
       
       
         
-        <a href="../chapter3/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter3" rel="next">
+        <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Chapter3
+              License
             </div>
           </div>
           <div class="md-footer__button md-icon">
